@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="primes/primes.vcxproj" Id="73de0ddc-b74a-4935-8a15-5adce409cffc" />
+</Solution>
