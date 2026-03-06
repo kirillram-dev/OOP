@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="primee.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="primeUtilites.cpp">
-      <Filter>Resource Files</Filter>
+    <ClCompile Include="translator_utils.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="primesUtilites.h">
+    <ClInclude Include="translator_utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

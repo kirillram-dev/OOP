@@ -15,16 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="primee.cpp">
+    <ClCompile Include="fsctorial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="primeUtilites.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="primesUtilites.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

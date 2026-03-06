@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{73de0ddc-b74a-4935-8a15-5adce409cffc}</ProjectGuid>
-    <RootNamespace>primes</RootNamespace>
+    <ProjectGuid>{d4373f6e-61ad-469e-955a-f83c85b1219a}</ProjectGuid>
+    <RootNamespace>ConsoleApplication1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="primee.cpp" />
-    <ClCompile Include="primeUtilites.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="translator_utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="primesUtilites.h" />
+    <ClInclude Include="translator_utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
