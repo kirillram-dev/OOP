@@ -21,5 +21,11 @@ SCENARIO("Car", "[car]")
 				CHECK(!tv.SelectChannel(87));
 			}*/
 		}
+		// машина может быть включена
+		WHEN("Car is turned on")
+		{
+			REQUIRE(car.TurnOnEngine());
+			CHECK(car.IsTurnedOn());
 	}
+
 }

@@ -21,3 +21,9 @@ Gear CCar::GetGear() const
 {
 	return m_gear;
 }
+
+bool CCar::TurnOnEngine()
+{
+	m_isOn = true;
+	return IsTurnedOn();
+}
