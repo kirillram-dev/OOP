@@ -26,6 +26,7 @@ public:
 	size_t GetSpeed() const;
 	Gear GetGear() const;
 	bool TurnOnEngine();
+	bool TurnOffEngine();
 
 private:
 

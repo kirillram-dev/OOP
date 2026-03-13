@@ -26,6 +26,12 @@ SCENARIO("Car", "[car]")
 		{
 			REQUIRE(car.TurnOnEngine());
 			CHECK(car.IsTurnedOn());
+		}
+		WHEN("Car is turned off")
+		{
+			REQUIRE(car.TurnOnEngine());
+			REQUIRE(car.TurnOffEngine());
+			CHECK(!car.IsTurnedOn());
+		}
 	}
-
 }
