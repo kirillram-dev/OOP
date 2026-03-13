@@ -11,6 +11,7 @@ SCENARIO("Car", "[car]")
 		WHEN("Car is turned off by default")
 		{
 			REQUIRE(!car.IsTurnedOn());
+			CHECK(car.GetDirection() == Direction::Stop);
 
 			// не может переключать канал в выключенном состоянии
 			/*THEN("cant select channel when turned off")
