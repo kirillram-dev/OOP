@@ -38,45 +38,90 @@ SCENARIO("Car", "[car]")
 	{
 		CCar car;
 		REQUIRE(car.TurnOnEngine());
-		// тестируем передачи
-		WHEN("Car is turned off")
+		// у включенной машины можно выбрать первую передачу и скорость
+		WHEN("when the car is switched on, you can choose first gear and speed")
 		{
 			REQUIRE(car.SetGear(1));
 			CHECK(car.GetSpeed() == 0);
+			REQUIRE(car.GetDirection() == Direction::Forward);
 			REQUIRE(car.SetSpeed(10));
 			CHECK(car.GetSpeed() == 10);
 			REQUIRE(!car.SetSpeed(40));
 			REQUIRE(car.SetSpeed(30));
-
+			CHECK(car.GetSpeed() == 30);
+		}
+		//можно выбрать вторую передачу
+		WHEN("when the car is switched on, you can choose second gear and speed")
+		{
+			REQUIRE(car.SetGear(1));
+			REQUIRE(car.SetSpeed(30));
 			REQUIRE(car.SetGear(2));
+			REQUIRE(car.GetDirection() == Direction::Forward);
 			REQUIRE(car.SetSpeed(50));
 			CHECK(car.GetSpeed() == 50);
 			REQUIRE(!car.SetSpeed(150));
-
+		}
+		// можно выбрать третью передачу
+		WHEN("when the car is switched on, you can choose third gear and speed")
+		{
+			REQUIRE(car.SetGear(1));
+			REQUIRE(car.SetSpeed(30));
 			REQUIRE(car.SetGear(3));
 			REQUIRE(car.SetSpeed(60));
 			CHECK(car.GetSpeed() == 60);
 			REQUIRE(!car.SetSpeed(100));
-
+		}
+		// можно выбрать четвертую передачу
+		WHEN("when the car is switched on, you can choose fourth gear and speed")
+		{
+			REQUIRE(car.SetGear(1));
+			REQUIRE(car.SetSpeed(30));
+			REQUIRE(car.SetGear(2));
+			REQUIRE(car.SetSpeed(50));
 			REQUIRE(car.SetGear(4));
 			REQUIRE(car.SetSpeed(80));
 			CHECK(car.GetSpeed() == 80);
 			REQUIRE(!car.SetSpeed(100));
-
+		}
+		// можно выбрать пятую передачу
+		WHEN("when the car is switched on, you can choose fifth gear and speed")
+		{
+			REQUIRE(car.SetGear(1));
+			REQUIRE(car.SetSpeed(30));
+			REQUIRE(car.SetGear(2));
+			REQUIRE(car.SetSpeed(50));
 			REQUIRE(car.SetGear(5));
 			REQUIRE(car.SetSpeed(120));
 			CHECK(car.GetSpeed() == 120);
 			REQUIRE(!car.SetSpeed(160));
+		}
+		// на скорости нельзя включить задний ход
+		WHEN("you cant reverse at speed")
+		{
+			REQUIRE(car.SetGear(1));
+			REQUIRE(car.SetSpeed(30));
 			REQUIRE(!car.SetGear(-1));
-
+		}
+		// у стоящей машины можно включить задний вход
+		WHEN("when car is parked, you can turn in the reverse gear")
+		{
+			REQUIRE(car.SetGear(1));
+			REQUIRE(car.SetSpeed(30));
 			REQUIRE(car.SetGear(0));
 			REQUIRE(car.SetSpeed(0));
 			CHECK(car.GetSpeed() == 0);
 			REQUIRE(car.SetGear(-1));
 			REQUIRE(car.SetSpeed(10));
 			CHECK(car.GetSpeed() == 10);
+			REQUIRE(car.SetGear(-1));
 			REQUIRE(!car.SetSpeed(25));
-
+		}
+		// у движущейся назад машины нельзя включить пятую передачу
+		WHEN("You can't put the car in fifth gear when it's moving backwards.")
+		{
+			REQUIRE(car.SetGear(-1));
+			REQUIRE(car.SetSpeed(10));
+			REQUIRE(car.GetDirection() == Direction::Back);
 			REQUIRE(!car.SetGear(1));
 		}
 	}
