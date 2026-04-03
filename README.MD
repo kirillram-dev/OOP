@@ -1,8 +1,7 @@
 # OOP (Object-Oriented Programming)
 
-This is repository for labs of OOP
+This is repository for experiments of OOP
 
 ```sh                            
-Created by Alexander Kozlov, 2016
-Under the direction of Alexey Malov
+Created by Sergey Fedorov, 2026
 ```
