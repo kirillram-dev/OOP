@@ -57,3 +57,39 @@ void CCarMenu::GetInfo() const
 {
 	Info(m_car);
 }
+
+bool CCarMenu::TurnOnEngine()
+{
+	return m_car.TurnOnEngine();
+}
+
+void CCarMenu::RunCommand(std::string& command)
+{
+	std::vector<std::string> commands;
+	std::stringstream ss(command);
+	std::string word;
+	while (ss >> word)
+	{
+		commands.push_back(word);
+	}
+
+	if (commands.size() == 1 || commands.size() == 2)
+	{
+		if ((commands[0] == "info") && (commands.size() == 1))
+		{
+			GetInfo();
+		}
+		else if ((commands[0] == "engine") && (commands[1] == "on"))
+		{
+			TurnOnEngine();
+		}
+		else
+		{
+			std::cout << "Unknown command" << std::endl;
+		}
+	}
+	else
+	{
+		std::cout << "Unknown command" << std::endl;
+	}
+}

@@ -3,6 +3,8 @@
 #include <cassert>
 #include <iostream>
 #include <string>
+#include <vector>
+#include <sstream>
 
 class CCarMenu
 {
@@ -11,11 +13,11 @@ public:
 	~CCarMenu() = default;
 
 	void GetInfo() const;
-	// bool TurnOnEngine();
+	bool TurnOnEngine();
 	// bool TurnOffEngine();
 	// bool SetGear(int gear);
 	// bool SetSpeed(int speed);
-	// void RunCommand(std::string& command);
+	void RunCommand(std::string& command);
 
 private:
 	CCar& m_car;
