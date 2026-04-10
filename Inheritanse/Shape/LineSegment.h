@@ -1,15 +1,17 @@
 #pragma once
 #include "IShape.h"
 #include "Point.h"
+#include "AdditionalFunction.h"
+#include <string>
 
 class CLineSegment final
 	: public IShape
 {
 public:
-	CLineSegment(CPoint const& startPoint, CPoint const& endPoint, std::string const& outlineColor);
+	CLineSegment(CPoint const& startPoint, CPoint const& endPoint, std::string const outlineColor);
 	double GetArea() const override;
 	double GetPerimeter() const override;
-	std::string ToString() const override;
+	// std::string ToString() const override;
 	uint32_t GetOutlineColor() const override;
 
 	CPoint GetStartPoint() const;
