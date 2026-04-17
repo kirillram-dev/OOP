@@ -8,6 +8,7 @@
 #include "../Shape/AdditionalFunction.h"
 #include "../Shape/Triangle.h"
 #include "../Shape/Rectangle.h"
+#include "../Shape/Circle.h"
 
 // отрезок
 TEST_CASE("segment")
@@ -132,6 +133,53 @@ TEST_CASE("rectangle")
 	SECTION("rectangle has a fill color")
 	{
 		CHECK(rectangle.GetFillColor() == FromStringToUint32("ffff00"));
+	}
+	// треугольник имеет строковое представление
+	//	SECTION("triangle has a string representation")
+	//	{
+	//		CHECK(triangle.ToString() == R"(Triangle:
+	// area = 57.00
+	// perimeter = 35.11
+	// outline color = 16777215
+	// fill color = 16776960
+	// Vertex1 = (7.00, 8.00)
+	// Vertex2 = (-4.00, 5.00)
+	// Vertex3 = (1.00, -4.00)
+	//)");
+	//	}
+}
+
+// круг
+TEST_CASE("circle")
+{
+	CCircle circle({ 3, 4 }, { 5 }, "ffffff", "ffff00");
+
+	// круг имеет центр и радиус
+	SECTION("circle has centre and radius")
+	{
+		CHECK(circle.GetCentre().x == 3);
+		CHECK(circle.GetCentre().y == 4);
+		CHECK(circle.GetRadius() == 5);
+	}
+	// у круга можно найти площадь
+	SECTION("circle has area")
+	{
+		CHECK(circle.GetArea()  == Approx(std::numbers::pi * 25));
+	}
+	// у круга  найти периметр
+	SECTION("circle has perimeter")
+	{
+		CHECK(circle.GetPerimeter() == Approx(std::numbers::pi * 10));
+	}
+	// у прямоугольника есть цвет границы
+	SECTION("circle has a line color")
+	{
+		CHECK(circle.GetOutlineColor() == FromStringToUint32("ffffff"));
+	}
+	// у прямоугольника есть заливка
+	SECTION("circle has a fill color")
+	{
+		CHECK(circle.GetFillColor() == FromStringToUint32("ffff00"));
 	}
 	// треугольник имеет строковое представление
 	//	SECTION("triangle has a string representation")
