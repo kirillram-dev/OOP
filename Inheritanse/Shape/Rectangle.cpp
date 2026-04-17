@@ -12,7 +12,7 @@ CRectangle::CRectangle(CPoint const& vertex1, CPoint const& vertex2,
 std::tuple<double, double> CRectangle::GetSides() const
 {
 	double side1 = abs(m_vertex1.x - m_vertex2.x);
-	double side2 = abs(sqrt(m_vertex1.y - m_vertex2.y));
+	double side2 = abs(m_vertex1.y - m_vertex2.y);
 	return std::make_tuple(side1, side2);
 }
 
