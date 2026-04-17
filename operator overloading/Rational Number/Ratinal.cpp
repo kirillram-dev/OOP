@@ -1,4 +1,4 @@
-#include "Ratinal.h"
+#include "Rational.h"
 #include <math.h>
 #include <numeric>
 
@@ -23,7 +23,7 @@
 		return m_numerator;
 	}
 
-	int CRational::GetNumerator() const
+	int CRational::GetDenominator() const
 	{
 		return m_denominator;
 	}
@@ -37,6 +37,14 @@
 	{
 		int denominator = std::lcm(lhs.GetDenominator(), rhs.GetNumerator());
 		int numerator = denominator / lhs.GetDenominator() * lhs.GetNumerator() + denominator / rhs.GetDenominator() * rhs.GetNumerator();
+		int div = std::gcd(denominator, numerator);
+		return CRational(numerator / div, denominator / div);
+	}
+
+	CRational const operator-(const CRational& lhs, const CRational& rhs)
+	{
+		int denominator = std::lcm(lhs.GetDenominator(), rhs.GetNumerator());
+		int numerator = denominator / lhs.GetDenominator() * lhs.GetNumerator() - denominator / rhs.GetDenominator() * rhs.GetNumerator();
 		int div = std::gcd(denominator, numerator);
 		return CRational(numerator / div, denominator / div);
 	}

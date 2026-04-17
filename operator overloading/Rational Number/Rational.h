@@ -31,3 +31,6 @@ private:
 	int m_denominator;
 
 };
+
+CRational const operator+(const CRational& lhs, const CRational& rhs);
+CRational const operator-(const CRational& lhs, const CRational& rhs);
