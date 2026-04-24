@@ -68,8 +68,15 @@ TEST_CASE("RationalNumber Operators", "[rational][arithmetic]")
 	SECTION("Addition Operator (+=)")
 	{
 		CRational res(3, 4);
-		res += a
+		res += a;
 		CHECK(res.GetNumerator() == 7);
 		CHECK(res.GetDenominator() == 6);
+	}
+	SECTION("Addition Operator (-=)")
+	{
+		CRational res(3, 4);
+		res -= a;
+		CHECK(res.GetNumerator() == 1);
+		CHECK(res.GetDenominator() == 3);
 	}
 }
