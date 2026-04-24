@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Rational Number\Ratinal.cpp" />
+    <ClCompile Include="..\Rational Number\Rational.cpp" />
     <ClCompile Include="RationalNumberTests.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

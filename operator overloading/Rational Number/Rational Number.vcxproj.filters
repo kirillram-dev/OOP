@@ -18,7 +18,7 @@
     <ClCompile Include="Rational Number.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ratinal.cpp">
+    <ClCompile Include="Rational.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

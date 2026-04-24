@@ -131,7 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ratinal.cpp" />
+    <ClCompile Include="Rational.cpp" />
     <ClCompile Include="Rational Number.cpp" />
   </ItemGroup>
   <ItemGroup>

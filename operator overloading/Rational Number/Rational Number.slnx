@@ -3,6 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="../RationalNumberTests/RationalNumberTests.vcxproj" />
-  <Project Path="Rational Number.vcxproj" />
+  <Project Path="../../../../../../../../!git/OOP/operator overloading/Rational Number/Rational Number.vcxproj" Id="26de8669-197b-49ef-91ea-0d61724564ae" />
+  <Project Path="../../../../../../../../!git/OOP/operator overloading/RationalNumberTests/RationalNumberTests.vcxproj" Id="e62fce00-4f70-489b-a9a9-d01b21cc839e" />
 </Solution>
