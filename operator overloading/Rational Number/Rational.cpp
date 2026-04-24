@@ -70,3 +70,13 @@
 		return CRational(numerator / div, denominator / div);
 
 	}
+
+	CRational const CRational::operator-() const
+	{
+		return CRational(-m_numerator, m_denominator);
+	}
+	
+	CRational const CRational::operator+() const
+	{
+		return CRational(m_numerator, m_denominator);
+	}

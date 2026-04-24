@@ -60,8 +60,8 @@ TEST_CASE("RationalNumber Operators", "[rational][arithmetic]")
 
 	SECTION("Operator unary plus (+)")
 	{
-		CRational res = a;
-		CHECK(res.GetNumerator() == 5);
+		CRational res = -a;
+		CHECK(res.GetNumerator() == -5);
 		CHECK(res.GetDenominator() == 12);
 	}
 }
