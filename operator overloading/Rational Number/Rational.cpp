@@ -98,3 +98,8 @@
 		*this = *this * rhs;
 		return *this;
 	}
+
+	CRational& CRational::operator/=(const CRational& rhs) {
+		*this = *this * rhs;
+		return *this;
+	}
