@@ -58,3 +58,15 @@
 		denominator *= (lhs.GetDenominator() / std::gcd(rhs.GetNumerator(), lhs.GetDenominator()));
 		return CRational(numerator, denominator);
 	}
+
+	CRational const operator/(const CRational& lhs, const CRational& rhs)
+	{
+		int numerator = lhs.GetNumerator() * rhs.GetNumerator(); // / std::gcd(rhs.GetDenominator(), lhs.GetNumerator());
+		int denominator = lhs.GetDenominator() * rhs.GetNumerator(); // / std::gcd(rhs.GetDenominator(), lhs.GetNumerator());
+
+		// numerator *= (rhs.GetNumerator() / std::gcd(rhs.GetNumerator(), lhs.GetDenominator()));
+		// denominator *= (lhs.GetDenominator() / std::gcd(rhs.GetNumerator(), lhs.GetDenominator()));
+		int div = std::gcd(denominator, numerator);
+		return CRational(numerator / div, denominator / div);
+
+	}
