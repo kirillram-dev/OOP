@@ -1,5 +1,8 @@
 #pragma once
 
+#include <numeric>
+#include <sstream>
+
 class CRational
 {
 public:
@@ -53,3 +56,8 @@ CRational const operator/(const CRational& lhs, const CRational& rhs);
 bool const operator==(const CRational& lhs, const CRational& rhs);
 bool const operator!=(const CRational& lhs, const CRational& rhs);
 bool const operator<(const CRational& lhs, const CRational& rhs);
+bool const operator>(const CRational& lhs, const CRational& rhs);
+bool const operator<=(const CRational& lhs, const CRational& rhs);
+bool const operator>=(const CRational& lhs, const CRational& rhs);
+
+std::ostream& operator<<(std::ostream& strm, const CRational& rhs);

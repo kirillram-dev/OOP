@@ -115,4 +115,31 @@ TEST_CASE("RationalNumber Operators", "[rational][arithmetic]")
 		CHECK(b < a);
 		CHECK(!(a < b));
 	}
+
+	SECTION("Less or equal operator (<=)")
+	{
+		CHECK(b <= a);
+		CHECK(a <= a);
+		CHECK(!(a <= b));
+	}
+
+	SECTION("More than operator (>)")
+	{
+		CHECK(a > b);
+		CHECK(!(b > a));
+	}
+
+	SECTION("More or equal operator (>=)")
+	{
+		CHECK(a >= b);
+		CHECK(a >= a);
+		CHECK(!(b >= a));
+	}
+}
+
+TEST_CASE("can put a rational number in the stream")
+{
+	std::ostringstream out;
+	out << CRational(1, 2);
+	CHECK(out.str() == "1/2");
 }
