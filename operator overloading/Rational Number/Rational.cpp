@@ -139,3 +139,18 @@
 		strm << rhs.GetNumerator() << '/' << rhs.GetDenominator();
 		return strm;
 	}
+
+	std::istream& operator>>(std::istream& strm, const CRational& rhs)
+	{
+		int numerator;
+		int denominator;
+		if ((strm >> numerator) && (strm.get() == '/') && (strm >> denominator))
+		{
+			rhs = CRational(numerator, denominator);
+		}
+		else
+		{
+			strm.setstate(std::ios_base::failbit);
+		}
+		return strm;
+	}
